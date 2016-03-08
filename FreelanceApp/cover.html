@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="profileApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <meta property="og:title" content="มาสร้างStory แบบภาพยนตร์ ฟรีแลนซ์ ห้ามป่วย ห้ามพัก ห้ามรักหมอ ในแบบคุณ!">
+    <meta property="og:description" content="เอาไปใช้เป็น cover page ก็ยังได้  เข้ามาเล่นกันเลย ไม่ห้ามแชร์ !!">
+    <meta property="og:image" content="http://freelancethemovie.com/facebookcover/freelance/images/facebook-og-last.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://freelancethemovie.com/facebookcover/freelance/cover.html">
+    <title>มาสร้างStory แบบภาพยนตร์ ฟรีแลนซ์ ห้ามป่วย ห้ามพัก ห้ามรักหมอ ในแบบคุณ!</title>
+
+    <link rel="stylesheet" href="bower_components/uikit/css/uikit.min.css">
+    <link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
+    <link rel="stylesheet" href="css/main.css?v=2.2">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script src="modernizr.custom.25261.js"></script>
+    <script>
+        if (navigator.userAgent.match(/(iPad|iPhone|iPod touch);.*CPU.*OS 7_\d/i)){
+            console.log("iOS 7.1 ไม่นะ ตัวอักษรแหกค่ะะะะะ");
+        }else{
+            console.log('บร้าวเซอร์ทั่วไปจ้ะ');
+        }
+    </script>
+    <!--<script src="bower_components/Lettering.js/jquery.lettering.js"></script>-->
+    <!--<script src="bower_components/uikit/js/uikit.min.js"></script>-->
+    <style>
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {
+            display:block !important;
+            opacity: 0;
+            z-index: -15;
+        }
+        .fadeOut {
+            pointer-events:none;
+        }
+        .mock-container .mock img{
+            width:auto;
+            height:46px;
+        }
+        .twitter-share-button {
+            vertical-align: top;;
+        }
+    </style>
+    <script>window.twttr = (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+
+        t._e = [];
+        t.ready = function(f) {
+            t._e.push(f);
+        };
+
+        return t;
+    }(document, "script", "twitter-wjs"));
+    </script>
+</head>
+
+
+<body >
+
+
+<div id="page" class="ng-cloak">
+    <div id="content_container" user="{{useragen}}" ng-controller="coverController" class="desktop-bg" ng-init="mock = 1">
+
+        <div class="data-loading" ng-show="isLoading">
+            <div class="indicator" layout="column" layout-align="center center">
+                <md-progress-circular class="md-hue-2" md-mode="indeterminate"></md-progress-circular>
+                <h2 class="font-prajad" style="color:white;font-weight: bold;">{{loadingText}}</h2>
+            </div>
+        </div>
+        <div class="folder" style="top:12%;left:5%"></div>
+        <div class="folder" style="top:30%;left:3%"></div>
+        <div class="folder" style="top:53%;left:7%"></div>
+
+        <div class="folder" style="top:31%;right:1%"></div>
+        <div class="folder" style="top:45%;right:5%"></div>
+        <div class="folder" style="top:25%;right:3%"></div>
+
+        <div class="mock-container">
+            <div class="mock-wrap">
+                <div class="sunny mock" ng-class="{'select':(selectOnHTMLindex == 0)}" ng-click="selectTheme(0)">
+                    <div class="pic-wrap">
+                        <img src="images/yellow.png">
+                    </div>
+                    <p>#แบบที่1 <br>.png</p>
+                </div>
+                <div class="davika mock"  ng-class="{'select':(selectOnHTMLindex == 1)}" ng-click="selectTheme(1)">
+                    <div class="pic-wrap">
+                        <img src="images/blue.png">
+                    </div>
+                    <p>#แบบที่2 <br>.png</p>
+                </div>
+                <div class="davika mock"  ng-class="{'select':(selectOnHTMLindex == 2)}" ng-click="selectTheme(2)">
+                    <div class="pic-wrap">
+                        <img src="images/ig1.png">
+                    </div>
+                    <p>#IG_1 <br>.png</p>
+                </div>
+                <div class="davika mock"  ng-class="{'select':(selectOnHTMLindex == 3)}" ng-click="selectTheme(3)">
+                    <div class="pic-wrap">
+                        <img src="images/ig2.png">
+                    </div>
+                    <p>#IG_2 <br>.png</p>
+                </div>
+                <div class="davika mock">
+                    <div class="pic-wrap">
+                        <a href="http://freelancethemovie.com/fbprofile">
+                            <img src="http://freelancethemovie.com/fbprofile/images/daviga-ex.jpg">
+                        </a>
+                    </div>
+                    <p>#fb-profile<br>.app</p>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="frame-top"  style="text-align: center">
+                <div class="wrap">
+                    <div class="circle-button red"></div>
+                    <div class="circle-button yellow"></div>
+                    <div class="circle-button green"></div>
+                </div>
+                <p style="margin:8px;text-shadow: 0 1px 0px white;">Freelance_cover_final_3_2015.tsf</p>
+            </div>
+            <div class="wrap">
+                <div class="result-container" >
+
+                    <canvas id="resultCanvas"   style="display:none;max-width:851px;"></canvas>
+                    <img src="images/facebook-og-last.jpg" ng-if="(selectOnHTMLindex == 0 || selectOnHTMLindex == 1)" style="opacity:0;margin-bottom:10px;max-width:851px;width:100%;">
+                    <img src="images/ig1.png" ng-if="(selectOnHTMLindex == 2 || selectOnHTMLindex == 3)" style="opacity:0;margin-bottom:10px;max-height:315px;">
+                    <div  style="width:100%;margin-bottom:10px;position:absolute;top:0;max-width:851px;text-align: center">
+                        <div id="result" style="display: inline-block"></div>
+                    </div>
+                    <div>
+                        <input type="text" ng-model="result.title" class="titleInput font-prajad">
+                        <input type="text" ng-model="result.subtitle" class="titleInput font-prajad">
+                        <input type="text" ng-model="result.tagText" class="titleInput font-prajad">
+                        <a ng-if="(isLogin == 2)" href="#" class="fb button" ng-click="login()"> Login With Facebook จะได้แชร์ไปที่ cover เลย </a>
+                        <a href="#" class="fb button" id="download"> Download ภาพนี้ </a>
+                        <a href="#" ng-if="(isLogin == 1)" class="logout fb button" ng-click="confirmShare()">แชร์และใช้เป็น Cover Facebook</a>
+
+                    </div>
+                </div>
+                 <span class="font-prajad">
+            Font สวยๆ นี้ มาจาก
+        </span>
+                <a href="http://www.f0nt.com/release/thaisans-neue-1-0/"> Thai Sans Neue </a>
+                <span class="font-prajad">และ</span>
+                <a href="http://www.f0nt.com/release/cs-prajad/"> CS PraJad </a>
+            </div>
+        </div>
+        <div class="confirm-box" ng-if="shareconfirm">
+
+            <div class="wrap">
+                <h1 class="font-prajad"> เสร็จแล้วแชร์ไปที่ Timeline เลยไหม (Everything done? confirm sharing)</h1>
+                <span class="font-prajad" style="text-align: left;display:block;">ข้อความแนบ (Share Caption)</span>
+                <div>
+                    <textarea ng-model="result.msg" placeholder="ใส่ข้อความ หรือ ไม่ใส่ก็ได้ค่ะ (Optional)"></textarea>
+                </div>
+
+                <a href="#" class="logout fb button" ng-click="shareResult()">โอเคตกลง (Okay)</a>
+                <a href="#" class="logout fb button" ng-click="confirmShare()">ยังไม่เสร็จขอแก้อีกนิด (Cancel)</a>
+            </div>
+        </div>
+        <!--<div class="image-gallery dn-fade" ng-if="browseImage">-->
+        <!--<div class="wrap">-->
+        <!--<h1 class="font-prajad">เลือกรูปจากเฟซบุคแกลอรีของคุณ (Select your profile picture)</h1>-->
+        <!--<a class="item" ng-repeat="item in profilePictures" ng-click="redraw($index)">-->
+        <!--<img ng-src="{{item.images[0].source}}">-->
+        <!--</a>-->
+        <!--</div>-->
+        <!--</div>-->
+
+    </div>
+
+</div>
+<div class="mobile-social-bar">
+    <div class="wrap">
+        <div class="fb-like" data-href="http://freelancethemovie.com/facebookcover/freelance/cover.html" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+        <div class="fb-share-button" data-href="http://freelancethemovie.com/facebookcover/freelance/cover.html" data-layout="button_count"></div>
+        <a class="twitter-share-button"
+           href="http://freelancethemovie.com/facebookcover"
+           data-counturl="http://freelancethemovie.com/facebookcover/freelance/cover.html">
+            Tweet
+        </a>
+    </div>
+
+</div>
+<div class="preloadfont" style="font-family: 'thaisans_neuebold';"></div>
+<div class="fixed-social-bar">
+    <div class="status-wrap">
+        <a class="twitter-share-button"
+           href="http://freelancethemovie.com/facebookcover"
+           data-counturl="http://freelancethemovie.com/facebookcover/freelance/cover.html">
+            Tweet
+        </a>
+        <div
+                class="fb-like"
+                data-share="true"
+                data-width="450"
+                data-show-faces="false">
+        </div>
+
+        <div class="status-icon" style="z-index:-5;">
+
+            <div class="item battery" style="opacity:1">
+                <img src="images/battery.png">
+            </div>
+            <div class="item">
+                <img src="images/status-bar.png">
+            </div>
+            <canvas id="fontCanvas" style="opacity:0;"></canvas>
+        </div>
+    </div>
+</div>
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-facebook/lib/angular-facebook.js"></script>
+<script src="bower_components/ngAnimate-animate.css/animate.js"></script>
+<script src="bower_components/ngFitText/src/ng-FitText.js"></script>
+<!--<script src="bower_components/gsap/src/minified/TweenMax.min.js"></script>-->
+<script src="profile-app.js"></script>
+<script src="cover-app.js?v=2.5"></script>
+<script>
+    var isFontLoaded = false;
+    app.run(['$window', function($window) {
+        $window.onload = function() {
+            isFontLoaded = true;
+        };
+    }]);
+</script>
+</body>
+</html>
